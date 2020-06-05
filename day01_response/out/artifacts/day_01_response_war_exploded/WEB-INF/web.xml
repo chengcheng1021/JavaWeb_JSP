@@ -9,15 +9,24 @@
         <servlet-name>demo1</servlet-name>
         <servlet-class>com.cc1021.web.servlet.ServletDemo1</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>demo2</servlet-name>
-        <servlet-class>com.cc1021.web.servlet.ServletDemo2</servlet-class>
-    </servlet>
-    
     <servlet-mapping>
         <servlet-name>demo1</servlet-name>
         <url-pattern>/demo1</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>demo2</servlet-name>
+        <servlet-class>com.cc1021.web.servlet.ServletDemo2</servlet-class>
+
+        <!--
+            配置 Servlet 的创建时机
+                1、第一次访问时，创建
+                    <load-on-startup> 的值为负数
+                2、在服务器启动时，创建
+                    <load-on-startup> 的值为0或正数
+        -->
+        <load-on-startup>-1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>demo2</servlet-name>
         <url-pattern>/demo2</url-pattern>
