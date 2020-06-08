@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "loginServlet")
+@WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -31,6 +31,16 @@ public class LoginServlet extends HttpServlet {
         User user = dao.login(loginUser);
 
         //5、判断user
+        if (user == null) {
+            //登录失败
+            request.getRequestDispatcher("/failServlet").forward(request, response);
+        } else {
+            //登录成功
+            //存储数据
+            request.setAttribute("user", user);
+            //转发
+            request.getRequestDispatcher("/successServlet").forward(request, response);
+        }
 
     }
 
