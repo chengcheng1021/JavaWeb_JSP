@@ -1,11 +1,14 @@
 package cn.cc1021.service.impl;
 
+import cn.cc1021.dao.UserDao;
+import cn.cc1021.dao.impl.UserDaoImpl;
 import cn.cc1021.domain.User;
 import cn.cc1021.service.UserService;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
+    private UserDao dao = new UserDaoImpl();
     /**
      * 查询所有用户信息
      *
@@ -14,6 +17,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAll() {
         //调用Dao完成查询
-        return null;
+        return dao.findAll();
     }
 }
