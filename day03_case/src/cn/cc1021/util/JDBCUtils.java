@@ -21,7 +21,7 @@ public class JDBCUtils {
             //1、加载配置文件
             Properties pro = new Properties();
             //使用 ClassLoader 加载配置文件，获取字节输入流
-            InputStream is = cn.cc1021.util.JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties");
+            InputStream is = JDBCUtils.class.getClassLoader().getResourceAsStream("druid.properties");
             pro.load(is);
 
             //2、初始化连接池对象
