@@ -13,4 +13,10 @@ public interface UserService {
      * @return
      */
     public List<User> findAll();
+
+    /**
+     * 新增用户
+     * @param user
+     */
+    void addUser(User user);
 }
