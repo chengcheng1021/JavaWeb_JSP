@@ -66,4 +66,11 @@ public class UserDaoImpl implements UserDao {
         User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), id);
         return user;
     }
+
+    @Override
+    public void updateUser(User user) {
+        //1、定义 sql
+        String sql = "update users set name = ?, gender = ?, age = ?, address = ?, qq = ?, email = ? where id = ?";
+        template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail(), user.getId());
+    }
 }
