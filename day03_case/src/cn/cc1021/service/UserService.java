@@ -19,4 +19,10 @@ public interface UserService {
      * @param user
      */
     void addUser(User user);
+
+    /**
+     * 删除用户
+     * @param id
+     */
+    void deleteUser(String id);
 }

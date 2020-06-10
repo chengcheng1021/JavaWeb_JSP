@@ -50,4 +50,12 @@ public class UserDaoImpl implements UserDao {
         //2、执行 sql
         template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail());
     }
+
+    @Override
+    public void deleteUser(int id) {
+        //1、定义 sql
+        String sql = "delete from users where id = ?";
+        //2、执行 sql
+        template.update(sql, id);
+    }
 }
