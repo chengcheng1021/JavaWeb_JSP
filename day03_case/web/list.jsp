@@ -78,7 +78,7 @@
                 <th>邮箱</th>
                 <th>操作</th>
             </tr>
-            <c:forEach items="${users}" var="user" varStatus="s">
+            <c:forEach items="${pb.list}" var="user" varStatus="s">
                 <tr>
                     <td><input type="checkbox" name="uid" value="${user.id}"></td>
                     <td>${s.count}</td>
@@ -94,6 +94,28 @@
             </c:forEach>
         </table>
     </form>
+    <div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li>
+                    <a href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <c:forEach begin="1" end="${pb.totalPage}" var="i">
+                    <li <c:if test="${pb.currentPage == i}"> class="active"</c:if>> <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${i}&rows=${pb.rows}">${i}</a></li>
+                </c:forEach>
+                <li>
+                    <a href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <span style="font-size: 25px;margin-left: 5px;">
+            共${pb.totalCount}条记录，共${pb.totalPage}页
+        </span>
+    </div>
 </div>
 </body>
 </html>

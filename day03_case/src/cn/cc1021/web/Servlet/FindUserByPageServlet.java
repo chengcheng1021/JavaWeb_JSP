@@ -21,6 +21,13 @@ public class FindUserByPageServlet extends HttpServlet {
         String currentPage = request.getParameter("currentPage");
         String rows = request.getParameter("rows");
 
+        if(currentPage == null || "".equals(currentPage)){
+            currentPage = "1";
+        }
+        if(rows == null || "".equals(rows)){
+            rows = "5";
+        }
+
         //2、调用 service 查询
         UserService service = new UserServiceImpl();
         PageBean<User> pb = service.findUserByPage(currentPage, rows);
