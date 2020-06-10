@@ -49,4 +49,14 @@ public class UserServiceImpl implements UserService {
     public void updateUser(User user) {
         dao.updateUser(user);
     }
+
+    @Override
+    public void delSelectedUser(String[] uids) {
+        //1、遍历数组
+        for (String id : uids) {
+            //2、调用dao删除
+            dao.deleteUser(Integer.parseInt(id));
+        }
+
+    }
 }
