@@ -57,6 +57,5 @@ public class UserServiceImpl implements UserService {
             //2、调用dao删除
             dao.deleteUser(Integer.parseInt(id));
         }
-
     }
 }

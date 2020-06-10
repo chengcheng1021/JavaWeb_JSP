@@ -39,8 +39,21 @@
         window.onload = function () {
             //给删除选中按钮添加单机事件
             document.getElementById("delSelected").onclick = function () {
-                //提交表单
-                document.getElementById("form").submit();
+                if(confirm("您确定删除选中条目吗？")){
+                    //提交表单
+                    document.getElementById("form").submit();
+                }
+            }
+
+            //获取第一个cb
+            document.getElementById("firstCb").onclick = function () {
+                //获取下边列表中所有的cb
+                var cbs = document.getElementsByName("uid");
+                //遍历
+                for (var i = 0; i < cbs.length; i++) {
+                    //设置这些cbs[i]的 checkbox 状态 = firstCb.checked
+                    cbs[i].checked = this.checked;
+                }
             }
         }
     </script>
@@ -55,7 +68,7 @@
     <form id="form" action="${pageContext.request.contextPath}/delSelectedServlet" method="post">
         <table border="1" class="table table-bordered table-hover">
             <tr class="success">
-                <th><input type="checkbox"></th>
+                <th><input type="checkbox" id="firstCb"></th>
                 <th>编号</th>
                 <th>姓名</th>
                 <th>性别</th>
