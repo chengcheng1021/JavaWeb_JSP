@@ -1,5 +1,6 @@
 package cn.cc1021.service;
 
+import cn.cc1021.domain.PageBean;
 import cn.cc1021.domain.User;
 
 import java.util.List;
@@ -31,4 +32,6 @@ public interface UserService {
     void updateUser(User user);
 
     void delSelectedUser(String[] uids);
+
+    PageBean<User> findUserByPage(String currentPage, String rows);
 }

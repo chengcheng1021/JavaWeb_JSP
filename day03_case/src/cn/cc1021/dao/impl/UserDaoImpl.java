@@ -73,4 +73,26 @@ public class UserDaoImpl implements UserDao {
         String sql = "update users set name = ?, gender = ?, age = ?, address = ?, qq = ?, email = ? where id = ?";
         template.update(sql, user.getName(), user.getGender(), user.getAge(), user.getAddress(), user.getQq(), user.getEmail(), user.getId());
     }
+
+    /**
+     * 查询总记录数
+     *
+     * @return
+     */
+    @Override
+    public int findTotalCount() {
+        return 0;
+    }
+
+    /**
+     * 分页查询每页记录
+     *
+     * @param start
+     * @param rows
+     * @return
+     */
+    @Override
+    public List<User> findByPage(int start, int rows) {
+        return null;
+    }
 }
