@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/findUserByPage")
-public class FindUserByPage extends HttpServlet {
+@WebServlet("/findUserByPageServlet")
+public class FindUserByPageServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //1、获取参数

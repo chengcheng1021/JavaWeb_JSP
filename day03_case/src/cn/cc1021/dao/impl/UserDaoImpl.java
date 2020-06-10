@@ -81,7 +81,9 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public int findTotalCount() {
-        return 0;
+        String sql = "select count(*) from users";
+
+        return template.queryForObject(sql, Integer.class);
     }
 
     /**
@@ -93,6 +95,8 @@ public class UserDaoImpl implements UserDao {
      */
     @Override
     public List<User> findByPage(int start, int rows) {
-        return null;
+        String sql = "select * from users limit ?, ?";
+
+        return template.query(sql, new BeanPropertyRowMapper<User>(User.class), start, rows);
     }
 }
