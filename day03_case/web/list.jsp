@@ -97,16 +97,16 @@
     <div>
         <nav aria-label="Page navigation">
             <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
+                <li <c:if test="${pb.currentPage == 1}"> class="disabled" </c:if>>
+                    <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pb.currentPage - 1}&rows=${pb.rows}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
                 <c:forEach begin="1" end="${pb.totalPage}" var="i">
                     <li <c:if test="${pb.currentPage == i}"> class="active"</c:if>> <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${i}&rows=${pb.rows}">${i}</a></li>
                 </c:forEach>
-                <li>
-                    <a href="#" aria-label="Next">
+                <li <c:if test="${pb.currentPage == pb.totalPage}"> class="disabled" </c:if>>
+                    <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${(pb.currentPage + 1) > pb.totalPage ? pb.totalPage : (pb.currentPage + 1)}&rows=${pb.rows}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
