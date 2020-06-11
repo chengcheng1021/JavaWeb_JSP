@@ -39,6 +39,10 @@ public class SensitiveWordsFilter implements Filter {
                     return value;
                 }
 
+                //增强 getParameterMap 方法
+
+                //增强 getParameterValues 方法
+
                 return method.invoke(req, args);
             }
         });
