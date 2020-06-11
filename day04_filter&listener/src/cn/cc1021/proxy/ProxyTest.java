@@ -14,8 +14,13 @@ public class ProxyTest {
         SaleComputer saleComputer = (SaleComputer) Proxy.newProxyInstance(lenovo.getClass().getClassLoader(), lenovo.getClass().getInterfaces(), new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                System.out.println("该方法执行了。。。");
-                return null;
+//                System.out.println("该方法执行了。。。");
+//                return null;
+
+
+                //使用真实对象调用该方法
+                Object object = method.invoke(lenovo, args);
+                return object;
             }
         });
 
