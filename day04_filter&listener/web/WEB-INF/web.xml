@@ -14,4 +14,16 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
     </context-param>
+
+    <!-- 配置监听器 -->
+<!--    <filter>-->
+<!--        <filter-name>demo1</filter-name>-->
+<!--        <filter-class>cn.cc1021.filter.Demo1Filter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>demo1</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--        <dispatcher>ASYNC</dispatcher>-->
+<!--    </filter-mapping>-->
+
 </web-app>
