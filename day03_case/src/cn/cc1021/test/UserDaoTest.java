@@ -33,7 +33,7 @@ public class UserDaoTest {
 
     @Test
     public void testRandomStudy(){
-        List<String> strings = new ArrayList<String>(Arrays.asList("golang", "php", "js", "nginx", "mysql", "redis"));
+        List<String> strings = new ArrayList<String>(Arrays.asList("golang", "php", "js", "nginx", "mysql", "redis", "python"));
         Random random = new Random();
         System.out.println(strings.get(random.nextInt(strings.size())));
     }
