@@ -27,6 +27,7 @@ public class UserDaoImpl implements UserDao {
      * @param loginUser 只有用户名和密码
      * @return user包含用户全部数据，没有查询到，返回 null
      */
+    @Override
     public User login(User loginUser){
         try {
             //1、编写sql
@@ -98,5 +99,24 @@ public class UserDaoImpl implements UserDao {
         String sql = "select * from users limit ?, ?";
 
         return template.query(sql, new BeanPropertyRowMapper<User>(User.class), start, rows);
+    }
+
+    /**
+     * 根据用户名和密码查找用户
+     *
+     * @param username
+     * @param password
+     * @return
+     */
+    @Override
+    public User findUserByUsernameAndPassword(String username, String password) {
+        try {
+            String sql = "select * from users where username = ? and password = ?";
+            User user = template.queryForObject(sql, new BeanPropertyRowMapper<User>(User.class), username, password);
+            return user;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

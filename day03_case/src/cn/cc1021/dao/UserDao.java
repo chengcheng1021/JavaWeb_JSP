@@ -32,4 +32,19 @@ public interface UserDao {
      * @return
      */
     List<User> findByPage(int start, int rows);
+
+    /**
+     * 登录接口
+     * @param user
+     * @return
+     */
+    User login(User user);
+
+    /**
+     * 根据用户名和密码查找用户
+     * @param username
+     * @param password
+     * @return
+     */
+    User findUserByUsernameAndPassword(String username, String password);
 }

@@ -34,4 +34,6 @@ public interface UserService {
     void delSelectedUser(String[] uids);
 
     PageBean<User> findUserByPage(String currentPage, String rows);
+
+    User login(User user);
 }
