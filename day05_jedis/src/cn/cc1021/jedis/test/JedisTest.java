@@ -115,4 +115,48 @@ public class JedisTest {
         //3、关闭连接
         jedis.close();
     }
+
+    /**
+     * 快速入门
+     * set 操作
+     */
+    @Test
+    public void test5(){
+        //1、获取连接
+        Jedis jedis = new Jedis(); //默认值就是 localhost 和 6379
+
+        //2、操作
+        //存储 set
+        jedis.sadd("myset", "java", "php", "c++");
+
+        //set 获取
+        Set<String> myset = jedis.smembers("myset");
+        System.out.println(myset);
+
+        //3、关闭连接
+        jedis.close();
+    }
+
+    /**
+     * 快速入门
+     * sortedset 操作
+     */
+    @Test
+    public void test6(){
+        //1、获取连接
+        Jedis jedis = new Jedis(); //默认值就是 localhost 和 6379
+
+        //2、操作
+        //存储 sortedset
+        jedis.zadd("mysortedset", 3, "亚瑟");
+        jedis.zadd("mysortedset", 30, "后羿");
+        jedis.zadd("mysortedset", 25, "孙悟空");
+
+        //3、获取 sortedset
+        Set<String> mysortedset = jedis.zrange("mysortedset", 0, -1);
+        System.out.println(mysortedset);
+
+        //3、关闭连接
+        jedis.close();
+    }
 }
