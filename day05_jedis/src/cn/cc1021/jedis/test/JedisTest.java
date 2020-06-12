@@ -3,6 +3,7 @@ package cn.cc1021.jedis.test;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -51,7 +52,7 @@ public class JedisTest {
 
     /**
      * 快速入门
-     * 字符串
+     * hash 操作
      */
     @Test
     public void test3(){
@@ -78,6 +79,38 @@ public class JedisTest {
             String value = user.get(key);
             System.out.println(key + ":" + value);
         }
+
+        //3、关闭连接
+        jedis.close();
+    }
+
+    /**
+     * 快速入门
+     * list 操作
+     */
+    @Test
+    public void test4(){
+        //1、获取连接
+        Jedis jedis = new Jedis(); //默认值就是 localhost 和 6379
+
+        //2、操作
+        //存储 list
+        jedis.lpush("mylist", "a", "b", "c");//从左边存
+        jedis.rpush("mylist", "a", "b", "c");//从右边存
+
+        //list 获取范围
+        List<String> list = jedis.lrange("mylist", 0, -1);
+        System.out.println(list);
+
+        //list 弹出
+        String element1 = jedis.lpop("mylist");
+        System.out.println(element1);
+
+        String element2 = jedis.rpop("mylist");
+        System.out.println(element2);
+
+        List<String> list2 = jedis.lrange("mylist", 0, -1);
+        System.out.println(list2);
 
         //3、关闭连接
         jedis.close();
