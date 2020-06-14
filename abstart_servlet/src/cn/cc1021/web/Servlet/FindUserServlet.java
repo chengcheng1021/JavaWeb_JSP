@@ -3,6 +3,7 @@ package cn.cc1021.web.Servlet;
 import cn.cc1021.domain.User;
 import cn.cc1021.service.UserService;
 import cn.cc1021.service.impl.UserServiceImpl;
+import redis.clients.jedis.JedisPoolConfig;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
