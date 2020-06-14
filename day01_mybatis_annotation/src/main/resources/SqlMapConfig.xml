@@ -22,9 +22,13 @@
         </environment>
     </environments>
 
-    <!-- 指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件 -->
+    <!--
+        指定映射配置文件的位置，映射配置文件指的是每个dao独立的配置文件
+        如果是用注解来配置的话，此处应该使用 class 属性指定被注解的 dao 全限定类名
+     -->
     <mappers>
-        <mapper resource="com/cc/dao/IUserDao.xml"></mapper>
+<!--        <mapper resource="com/cc/dao/IUserDao.xml"></mapper>-->
+        <mapper class="com.cc.dao.IUserDao"></mapper>
     </mappers>
 
 </configuration>
