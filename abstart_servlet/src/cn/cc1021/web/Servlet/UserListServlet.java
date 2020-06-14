@@ -28,38 +28,6 @@ public class UserListServlet extends HttpServlet {
         request.getRequestDispatcher("/list.jsp").forward(request, response);
     }
 
-    protected List<User> doPostRedis(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //1、从redis中查询
-        //1.1 获取 jedis 客户端
-        Jedis jedis = JedisPoolUtils.getJedis();
-        //1.2 可使用 sortedset 排序查询
-        Set<String> allUsers = jedis.zrange("users", 0, -1);
-
-        List<User> users = null;
-        //2、判断查询的集合是否为空
-        if (allUsers == null || allUsers.size() == 0) {
-            //3、如果为空，需要从数据库查询，在将数据存入redis
-            UserServiceImpl service = new UserServiceImpl();
-            users = service.findAll();
-
-            for (int i=0; i<users.size(); i++) {
-                jedis.zadd("users", users.get(i).getId(), users.get(i).getName());
-            }
-
-        } else {
-            //如果不为空，将 set 数据存入list
-            users = new ArrayList<User>();
-            for (String name : allUsers) {
-                User user = new User();
-                user.setName(name);
-                users.add(user);
-            }
-        }
-
-        //4、如果不为空，直接返回
-        return users;
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         this.doPost(request, response);
