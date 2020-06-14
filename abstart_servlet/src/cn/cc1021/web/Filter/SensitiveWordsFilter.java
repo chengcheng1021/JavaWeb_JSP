@@ -11,7 +11,7 @@ import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebFilter("/*")
+//@WebFilter("/*")
 public class SensitiveWordsFilter implements Filter {
     @Override
     public void destroy() {
