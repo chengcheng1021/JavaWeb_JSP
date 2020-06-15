@@ -12,7 +12,7 @@ public interface SqlSession {
      * @param <T>
      * @return
      */
-    <T> T getMapper(Class<T> daoInterfaceClass);
+    public <T> T getMapper(Class<T> daoInterfaceClass);
 
     /**
      * 释放资源
