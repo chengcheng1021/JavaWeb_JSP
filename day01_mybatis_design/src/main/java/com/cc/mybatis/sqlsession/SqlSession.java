@@ -1,4 +1,4 @@
-package com.cc.sqlsession;
+package com.cc.mybatis.sqlsession;
 
 /**
  * 自定义 Mybatis 中和数据库交互的核心类

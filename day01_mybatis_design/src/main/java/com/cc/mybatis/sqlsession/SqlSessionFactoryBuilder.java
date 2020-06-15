@@ -1,4 +1,4 @@
-package com.cc.sqlsession;
+package com.cc.mybatis.sqlsession;
 
 import java.io.InputStream;
 

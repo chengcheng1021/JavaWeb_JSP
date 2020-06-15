@@ -3,9 +3,9 @@ package com.cc.test;
 import com.cc.dao.IUserDao;
 import com.cc.domain.User;
 import com.cc.mybatis.io.Resources;
-import com.cc.sqlsession.SqlSession;
-import com.cc.sqlsession.SqlSessionFactory;
-import com.cc.sqlsession.SqlSessionFactoryBuilder;
+import com.cc.mybatis.sqlsession.SqlSession;
+import com.cc.mybatis.sqlsession.SqlSessionFactory;
+import com.cc.mybatis.sqlsession.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
 import java.io.IOException;
