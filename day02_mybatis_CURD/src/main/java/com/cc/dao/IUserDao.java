@@ -1,5 +1,6 @@
 package com.cc.dao;
 
+import com.cc.domain.QueryVo;
 import com.cc.domain.User;
 
 import java.util.List;
@@ -52,4 +53,11 @@ public interface IUserDao {
      * @return
      */
     int findTotal();
+
+    /**
+     * 根据 queryVo 中的条件查询用户
+     * @param vo
+     * @return
+     */
+    List<User> findUserByVo(QueryVo vo);
 }

@@ -1,6 +1,7 @@
 package com.cc.test;
 
 import com.cc.dao.IUserDao;
+import com.cc.domain.QueryVo;
 import com.cc.domain.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -147,5 +148,21 @@ public class MybatisTest {
         //5、执行保存方法
         userDao.saveUser(user);
         System.out.println("保存操作之后：" + user);
+    }
+
+    /**
+     * 测试根据用户名称查询用户
+     */
+    @Test
+    public void testFindByVo() {
+        QueryVo vo = new QueryVo();
+        User user = new User();
+        user.setUsername("%王%");
+        vo.setUser(user);
+        //5、执行保存方法
+        List<User> users = userDao.findUserByVo(vo);
+        for (User u : users) {
+            System.out.println(u);
+        }
     }
 }
