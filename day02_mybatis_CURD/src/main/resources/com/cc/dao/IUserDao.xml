@@ -19,8 +19,13 @@
         update user set username=#{username}, address=#{address}, sex=#{sex}, birthday=#{birthday} where id=#{id};
     </update>
 
-    <!-- 删除用户 -->
+    <!-- 根据id删除用户 -->
     <delete id="deleteUser" parameterType="java.lang.Integer">
         delete from user where id = #{uid}
     </delete>
+
+    <!-- 根据id查询用户-->
+    <select id="findById" parameterType="INT" resultType="com.cc.domain.User">
+        select * from user where id = #{uid}
+    </select>
 </mapper>

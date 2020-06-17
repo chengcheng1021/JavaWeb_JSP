@@ -99,4 +99,14 @@ public class MybatisTest {
         //5、执行保存方法
         userDao.deleteUser(48);
     }
+
+    /**
+     * 测试根据id查询用户
+     */
+    @Test
+    public void testFindById() {
+        //5、执行保存方法
+        User user = userDao.findById(50);
+        System.out.println(user);
+    }
 }

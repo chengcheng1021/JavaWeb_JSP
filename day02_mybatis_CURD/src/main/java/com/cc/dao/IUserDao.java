@@ -32,4 +32,11 @@ public interface IUserDao {
      * @param userId
      */
     void deleteUser(Integer userId);
+
+    /**
+     * 根据id查询用户信息
+     * @param userId
+     * @return
+     */
+    User findById(Integer userId);
 }
