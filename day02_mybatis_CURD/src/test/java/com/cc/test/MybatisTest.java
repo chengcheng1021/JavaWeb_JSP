@@ -90,4 +90,13 @@ public class MybatisTest {
         //5、执行保存方法
         userDao.updateUser(user);
     }
+
+    /**
+     * 测试删除用户
+     */
+    @Test
+    public void testDeleteUser() {
+        //5、执行保存方法
+        userDao.deleteUser(48);
+    }
 }

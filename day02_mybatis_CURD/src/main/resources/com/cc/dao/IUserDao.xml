@@ -18,4 +18,9 @@
     <update id="updateUser" parameterType="com.cc.domain.User">
         update user set username=#{username}, address=#{address}, sex=#{sex}, birthday=#{birthday} where id=#{id};
     </update>
+
+    <!-- 删除用户 -->
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where id = #{uid}
+    </delete>
 </mapper>

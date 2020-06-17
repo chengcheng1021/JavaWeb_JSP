@@ -26,4 +26,10 @@ public interface IUserDao {
      * @param user
      */
     void updateUser(User user);
+
+    /**
+     * 根据 userId 删除用户
+     * @param userId
+     */
+    void deleteUser(Integer userId);
 }
