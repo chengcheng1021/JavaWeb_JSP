@@ -13,4 +13,9 @@
     <insert id="saveUser" parameterType="com.cc.domain.User">
         insert into user(username, address, sex, birthday) values (#{username}, #{address}, #{sex}, #{birthday});
     </insert>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="com.cc.domain.User">
+        update user set username=#{username}, address=#{address}, sex=#{sex}, birthday=#{birthday} where id=#{id};
+    </update>
 </mapper>

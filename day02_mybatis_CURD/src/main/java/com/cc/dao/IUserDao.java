@@ -20,4 +20,10 @@ public interface IUserDao {
      * @param user
      */
     void saveUser(User user);
+
+    /**
+     * 更新用户
+     * @param user
+     */
+    void updateUser(User user);
 }

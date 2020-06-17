@@ -41,6 +41,8 @@ public class MybatisTest {
 
     @After//用于在测试方法之后执行
     public void destory() throws IOException {
+        //提交事务
+        sqlSession.commit();
         //6、释放资源
         sqlSession.close();
         is.close();
@@ -71,8 +73,21 @@ public class MybatisTest {
 
         //5、执行保存方法
         userDao.saveUser(user);
+    }
 
-        //提交事务
-        sqlSession.commit();
+    /**
+     * 测试更新操作
+     */
+    @Test
+    public void testUpdateUser() {
+        User user = new User();
+        user.setId(50);
+        user.setSex("女");
+        user.setAddress("北京市");
+        user.setUsername("mary");
+        user.setBirthday(new Date());
+
+        //5、执行保存方法
+        userDao.updateUser(user);
     }
 }
