@@ -116,7 +116,8 @@ public class MybatisTest {
     @Test
     public void testFindByName() {
         //5、执行保存方法
-        List<User> users = userDao.findByName("%王%");
+//        List<User> users = userDao.findByName("%王%");
+        List<User> users = userDao.findByName("王");
         for (User user : users) {
             System.out.println(user);
         }

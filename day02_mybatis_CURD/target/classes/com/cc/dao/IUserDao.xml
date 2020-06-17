@@ -31,7 +31,7 @@
 
     <!-- 根据用户名称查询用户 -->
     <select id="findByName" parameterType="java.lang.String" resultType="com.cc.domain.User">
-        select * from user where username like #{name}
+        select * from user where username like '%${value}%'
     </select>
 
     <!-- 查询总记录数 -->
