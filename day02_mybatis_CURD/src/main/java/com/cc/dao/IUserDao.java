@@ -14,4 +14,10 @@ public interface IUserDao {
      * @return
      */
     List<User> findAll();
+
+    /**
+     * 保存用户
+     * @param user
+     */
+    void saveUser(User user);
 }
