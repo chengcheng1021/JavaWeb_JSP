@@ -67,10 +67,10 @@ public class MybatisTest {
     @Test
     public void testSaveUser() {
         User user = new User();
-        user.setSex("男");
-        user.setAddress("南京市");
-        user.setUsername("cheng");
-        user.setBirthday(new Date());
+        user.setUserSex("男");
+        user.setUserAddress("南京市");
+        user.setUserName("cheng");
+        user.setUserBirthday(new Date());
 
         //5、执行保存方法
         userDao.saveUser(user);
@@ -82,11 +82,11 @@ public class MybatisTest {
     @Test
     public void testUpdateUser() {
         User user = new User();
-        user.setId(50);
-        user.setSex("女");
-        user.setAddress("北京市");
-        user.setUsername("mary");
-        user.setBirthday(new Date());
+        user.setUserId(50);
+        user.setUserSex("女");
+        user.setUserAddress("北京市");
+        user.setUserName("mary");
+        user.setUserBirthday(new Date());
 
         //5、执行保存方法
         userDao.updateUser(user);
@@ -140,10 +140,10 @@ public class MybatisTest {
     @Test
     public void testLastInsertId() {
         User user = new User();
-        user.setSex("男");
-        user.setAddress("南京市");
-        user.setUsername("cheng last insertId");
-        user.setBirthday(new Date());
+        user.setUserSex("男");
+        user.setUserAddress("南京市");
+        user.setUserName("cheng last insertId");
+        user.setUserBirthday(new Date());
         System.out.println("保存操作之前：" + user);
         //5、执行保存方法
         userDao.saveUser(user);
@@ -157,7 +157,7 @@ public class MybatisTest {
     public void testFindByVo() {
         QueryVo vo = new QueryVo();
         User user = new User();
-        user.setUsername("%王%");
+        user.setUserName("%王%");
         vo.setUser(user);
         //5、执行保存方法
         List<User> users = userDao.findUserByVo(vo);

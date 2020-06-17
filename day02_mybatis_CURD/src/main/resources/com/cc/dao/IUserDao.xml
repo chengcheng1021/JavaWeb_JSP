@@ -6,7 +6,7 @@
 <mapper namespace="com.cc.dao.IUserDao">
     <!-- 查询所有 -->
     <select id="findAll" resultType="com.cc.domain.User">
-        select * from user;
+        select id as userId, username as userName, address as userAddress, sex as userSex, birthday as userBirthday from user;
     </select>
 
     <!-- 保存用户 -->
