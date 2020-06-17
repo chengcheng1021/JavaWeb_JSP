@@ -132,4 +132,20 @@ public class MybatisTest {
         Integer count = userDao.findTotal();
         System.out.println(count);
     }
+
+    /**
+     * 测试保存操作
+     */
+    @Test
+    public void testLastInsertId() {
+        User user = new User();
+        user.setSex("男");
+        user.setAddress("南京市");
+        user.setUsername("cheng last insertId");
+        user.setBirthday(new Date());
+        System.out.println("保存操作之前：" + user);
+        //5、执行保存方法
+        userDao.saveUser(user);
+        System.out.println("保存操作之后：" + user);
+    }
 }

@@ -240,3 +240,21 @@
 2020-06-17 19:02:05,735 657    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@fdefd3f]
 2020-06-17 19:02:05,736 658    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@fdefd3f]
 2020-06-17 19:02:05,736 658    [           main] DEBUG source.pooled.PooledDataSource  - Returned connection 266272063 to pool.
+2020-06-17 19:12:38,422 0      [           main] DEBUG ache.ibatis.logging.LogFactory  - Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-06-17 19:12:38,458 36     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-17 19:12:38,459 37     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-17 19:12:38,459 37     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-17 19:12:38,459 37     [           main] DEBUG source.pooled.PooledDataSource  - PooledDataSource forcefully closed/removed all connections.
+2020-06-17 19:12:38,576 154    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Opening JDBC Connection
+2020-06-17 19:12:39,042 620    [           main] DEBUG source.pooled.PooledDataSource  - Created connection 556529265.
+2020-06-17 19:12:39,042 620    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@212bf671]
+2020-06-17 19:12:39,046 624    [           main] DEBUG   com.cc.dao.IUserDao.saveUser  - ==>  Preparing: insert into user(username, address, sex, birthday) values (?, ?, ?, ?);
+2020-06-17 19:12:39,074 652    [           main] DEBUG   com.cc.dao.IUserDao.saveUser  - ==> Parameters: cheng last insertId(String), 南京市(String), 男(String), 2020-06-17 19:12:38.562(Timestamp)
+2020-06-17 19:12:39,076 654    [           main] DEBUG   com.cc.dao.IUserDao.saveUser  - <==    Updates: 1
+2020-06-17 19:12:39,078 656    [           main] DEBUG ao.IUserDao.saveUser!selectKey  - ==>  Preparing: select last_insert_id();
+2020-06-17 19:12:39,078 656    [           main] DEBUG ao.IUserDao.saveUser!selectKey  - ==> Parameters: 
+2020-06-17 19:12:39,092 670    [           main] DEBUG ao.IUserDao.saveUser!selectKey  - <==      Total: 1
+2020-06-17 19:12:39,093 671    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@212bf671]
+2020-06-17 19:12:39,094 672    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Resetting autocommit to true on JDBC Connection [com.mysql.jdbc.JDBC4Connection@212bf671]
+2020-06-17 19:12:39,095 673    [           main] DEBUG ansaction.jdbc.JdbcTransaction  - Closing JDBC Connection [com.mysql.jdbc.JDBC4Connection@212bf671]
+2020-06-17 19:12:39,095 673    [           main] DEBUG source.pooled.PooledDataSource  - Returned connection 556529265 to pool.
