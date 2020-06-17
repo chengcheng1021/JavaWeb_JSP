@@ -109,4 +109,16 @@ public class MybatisTest {
         User user = userDao.findById(50);
         System.out.println(user);
     }
+
+    /**
+     * 测试根据用户名称查询用户
+     */
+    @Test
+    public void testFindByName() {
+        //5、执行保存方法
+        List<User> users = userDao.findByName("%王%");
+        for (User user : users) {
+            System.out.println(user);
+        }
+    }
 }

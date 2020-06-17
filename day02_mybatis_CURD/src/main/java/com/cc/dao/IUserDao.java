@@ -39,4 +39,11 @@ public interface IUserDao {
      * @return
      */
     User findById(Integer userId);
+
+    /**
+     * 根据名称模糊查询用户
+     * @param userName
+     * @return
+     */
+    List<User> findByName(String userName);
 }
