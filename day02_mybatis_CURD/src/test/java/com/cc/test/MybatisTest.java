@@ -121,4 +121,14 @@ public class MybatisTest {
             System.out.println(user);
         }
     }
+
+    /**
+     * 查询总记录条数
+     */
+    @Test
+    public void testFindTotal() {
+        //5、执行保存方法
+        Integer count = userDao.findTotal();
+        System.out.println(count);
+    }
 }
