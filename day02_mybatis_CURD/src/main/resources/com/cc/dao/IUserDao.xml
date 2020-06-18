@@ -4,9 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.cc.dao.IUserDao">
+    <!-- 配置 查询结果的列名和实体类的属性名的对应关系 -->
+    <resultMap id="userMap" type="com.cc.domain.User">
+        <!-- 主键字段的对应 -->
+        <id property="userId" column="id"></id>
+        <!-- 非主键字段的对应 -->
+        <id property="userName" column="username"></id>
+        <id property="userAddress" column="address"></id>
+        <id property="userBirthday" column="birthday"></id>
+        <id property="userSex" column="sex"></id>
+    </resultMap>
+
     <!-- 查询所有 -->
-    <select id="findAll" resultType="com.cc.domain.User">
-        select id as userId, username as userName, address as userAddress, sex as userSex, birthday as userBirthday from user;
+    <select id="findAll" resultMap="userMap">
+        select * from user;
     </select>
 
     <!-- 保存用户 -->
